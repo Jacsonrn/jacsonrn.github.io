@@ -3,125 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seletor TikTok - Automação de Vídeos Virais</title>
-    <meta name="description" content="Crie vídeos para TikTok, Shorts e Reels automaticamente com Inteligência Artificial.">
-    <style>
-        :root {
-            --primary: #FF0050; /* Cor TikTok */
-            --dark: #121212;
-            --light: #ffffff;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: var(--dark);
-            color: var(--light);
-            line-height: 1.6;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        
-        /* Header */
-        header { padding: 20px 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: bold; font-size: 1.5rem; color: var(--primary); }
-        
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-        }
-        h1 { font-size: 3rem; margin-bottom: 20px; }
-        p.subtitle { font-size: 1.2rem; color: #ccc; max-width: 600px; margin: 0 auto 40px auto; }
-        
-        /* Botão de Compra */
-        .btn-cta {
-            background-color: var(--primary);
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: transform 0.2s;
-            display: inline-block;
-        }
-        .btn-cta:hover { transform: scale(1.05); background-color: #d60043; }
-        
-        /* Features */
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; padding: 50px 0; }
-        .feature-card { background: #1e1e1e; padding: 30px; border-radius: 10px; }
-        .feature-card h3 { color: var(--primary); }
-        
-        /* Demo Video */
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 */
-            height: 0;
-            overflow: hidden;
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 10px;
-            border: 2px solid #333;
-        }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-        /* Footer */
-        footer { text-align: center; padding: 40px; color: #666; font-size: 0.9rem; border-top: 1px solid #333; }
-    </style>
+    <title>Seletor Hub - Escolha seu Destino</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="logo">Seletor TikTok</div>
-            <!-- Link para suporte ou contato -->
-            <a href="mailto:suporte@seuemail.com" style="color: white; text-decoration: none;">Suporte</a>
-        </header>
+    <div class="portal-container">
+        <!-- Lado Esquerdo: Software -->
+        <div class="split split-software" onclick="window.location.href='software.html'">
+            <h2>Automação IA</h2>
+            <p>Crie vídeos virais automaticamente para TikTok e Reels usando Inteligência Artificial.</p>
+            <a href="software.html" class="btn-enter">Acessar Software</a>
+        </div>
 
-        <section class="hero">
-            <h1>Crie Vídeos Virais em Minutos</h1>
-            <p class="subtitle">
-                Automatize a edição, legendas e narração com IA. 
-                Pare de perder horas editando e comece a escalar seus canais Dark.
-            </p>
-            
-            <!-- SUBSTITUA O LINK ABAIXO PELO SEU LINK DO GUMROAD -->
-            <a href="https://gumroad.com/l/SEU_PRODUTO" class="btn-cta">Baixar Agora</a>
-            <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">Compatível com Windows 10/11</p>
-        </section>
-
-        <!-- Área do Vídeo -->
-        <section style="margin-bottom: 60px;">
-            <div class="video-container">
-                <!-- SUBSTITUA PELO ID DO SEU VIDEO DO YOUTUBE -->
-                <iframe src="https://www.youtube.com/embed/SEU_ID_VIDEO" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="feature-card">
-                <h3>✂️ Cortes Automáticos</h3>
-                <p>Detecta silêncios e remove partes chatas automaticamente. Mantém o ritmo acelerado que o TikTok exige.</p>
-            </div>
-            <div class="feature-card">
-                <h3>🤖 Narração IA</h3>
-                <p>Integração com Azure e OpenAI para gerar vozes ultra-realistas sem você precisar gravar nada.</p>
-            </div>
-            <div class="feature-card">
-                <h3>📝 Legendas Dinâmicas</h3>
-                <p>Gera legendas estilo "Karaokê" ou palavra-por-palavra automaticamente, sincronizadas perfeitamente.</p>
-            </div>
-        </section>
-
-        <section style="text-align: center; padding: 60px 0;">
-            <h2>Pronto para automatizar?</h2>
-            <br>
-            <a href="https://gumroad.com/l/SEU_PRODUTO" class="btn-cta">Comprar Licença Vitalícia</a>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 Seletor TikTok. Todos os direitos reservados.</p>
-            <p>Este software não é afiliado ao TikTok/ByteDance.</p>
-        </footer>
+        <!-- Lado Direito: Banco de Arquivos -->
+        <div class="split split-banco" onclick="window.location.href='banco.html'">
+            <h2>Banco de Assets</h2>
+            <p>Acesse nossa biblioteca exclusiva de vídeos, músicas e efeitos sonoros hospedados no Drive.</p>
+            <a href="banco.html" class="btn-enter">Acessar Banco</a>
+        </div>
     </div>
 
 </body>
