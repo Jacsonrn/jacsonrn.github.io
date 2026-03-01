@@ -92,10 +92,26 @@
             <div style="background: #1e1e1e; padding: 25px; border-radius: 15px; max-width: 400px; margin: 0 auto; border: 1px solid #333;">
                 <p style="margin-bottom: 15px; font-weight: bold; color: white;">Digite seu e-mail para receber a licença:</p>
                 <input type="email" id="email-cliente" placeholder="seu@email.com" style="width: 90%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: none; font-size: 1rem;">
-                <button id="btn-comprar" onclick="iniciarCompra()" class="btn-cta" style="width: 100%; cursor: pointer; border: none;">Comprar Agora (R$ 49,90)</button>
+                
+                <p style="margin-bottom: 15px; font-weight: bold; color: white;">Confirme seu e-mail:</p>
+                <input type="email" id="email-confirmacao" placeholder="confirme@email.com" style="width: 90%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: none; font-size: 1rem;">
+                
+                <button id="btn-comprar" onclick="validarEComprar()" class="btn-cta" style="width: 100%; cursor: pointer; border: none;">Comprar Agora (R$ 49,90)</button>
                 <p id="msg-status" style="font-size: 0.8rem; color: #ccc; margin-top: 10px; min-height: 20px;"></p>
             </div>
             <script src="checkout_integration.js"></script>
+            <script>
+                function validarEComprar() {
+                    const email = document.getElementById('email-cliente').value.trim();
+                    const confirmacao = document.getElementById('email-confirmacao').value.trim();
+                    
+                    if (email !== confirmacao) {
+                        alert("Os e-mails não coincidem. Por favor, verifique.");
+                        return;
+                    }
+                    iniciarCompra();
+                }
+            </script>
             
             <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">Compatível com Windows 10/11</p>
         </section>
