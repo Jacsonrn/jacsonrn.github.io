@@ -13,20 +13,51 @@
         <a href="index.html" style="color: #ccc;">&larr; Voltar</a>
     </header>
 
-    <!-- Filtros -->
-    <div style="padding: 20px; text-align: center;">
-        <button onclick="filterGallery('all')" class="btn-enter" style="padding: 8px 20px; margin: 5px; font-size: 0.9rem;">Todos</button>
-        <button onclick="filterGallery('video')" class="btn-enter" style="padding: 8px 20px; margin: 5px; font-size: 0.9rem;">Vídeos</button>
-        <button onclick="filterGallery('audio')" class="btn-enter" style="padding: 8px 20px; margin: 5px; font-size: 0.9rem;">Áudios</button>
-        <button onclick="filterGallery('image')" class="btn-enter" style="padding: 8px 20px; margin: 5px; font-size: 0.9rem;">Imagens</button>
+    <!-- Área de Login Simples -->
+    <div id="login-area" style="text-align: center; padding: 100px 20px;">
+        <h2>Área Exclusiva para Clientes</h2>
+        <p>Digite a senha recebida no e-mail de compra para acessar o banco.</p>
+        <input type="password" id="access-pass" placeholder="Senha de Acesso" style="padding: 10px; font-size: 1rem; border-radius: 5px; border: none;">
+        <button onclick="checkAccess()" class="btn-enter" style="padding: 10px 20px; cursor: pointer;">Entrar</button>
+        <p id="login-msg" style="color: red; margin-top: 10px;"></p>
     </div>
 
-    <div id="gallery" class="gallery-grid">
-        <p style="grid-column: 1/-1; text-align: center;">Carregando assets do Drive...</p>
+    <!-- Conteúdo do App (Oculto inicialmente) -->
+    <div id="app-area" style="display: none;">
+        <!-- Filtros -->
+        <div style="padding: 20px; text-align: center;">
+            <button onclick="filterGallery('all')" class="btn-enter" style="padding: 8px 20px; margin: 5px; font-size: 0.9rem;">Todos</button>
+            <button onclick="filterGallery('video')" class="btn-enter" style="padding: 8px 20px; margin: 5px; font-size: 0.9rem;">Vídeos</button>
+            <button onclick="filterGallery('audio')" class="btn-enter" style="padding: 8px 20px; margin: 5px; font-size: 0.9rem;">Áudios</button>
+            <button onclick="filterGallery('image')" class="btn-enter" style="padding: 8px 20px; margin: 5px; font-size: 0.9rem;">Imagens</button>
+        </div>
+
+        <div id="gallery" class="gallery-grid">
+            <p style="grid-column: 1/-1; text-align: center;">Carregando assets do Drive...</p>
+        </div>
     </div>
 
     <script>
         let allAssets = [];
+        const SITE_PASS = "seletor2024"; // Defina sua senha aqui
+
+        function checkAccess() {
+            const input = document.getElementById('access-pass').value;
+            if (input === SITE_PASS) {
+                document.getElementById('login-area').style.display = 'none';
+                document.getElementById('app-area').style.display = 'block';
+                loadManifest(); // Só carrega o JSON se a senha estiver certa
+            } else {
+                document.getElementById('login-msg').innerText = "Senha incorreta.";
+            }
+        }
+
+        // Permitir Enter no input
+        document.getElementById('access-pass').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkAccess();
+            }
+        });
 
         // Função para converter link de visualização do Drive em link direto de imagem (thumbnail)
         function getDriveThumbnail(url) {
@@ -108,8 +139,7 @@
         }
 
         // Inicia
-        loadManifest();
+        // loadManifest(); // Removido para segurança, chamado apenas no checkAccess
     </script>
 </body>
 </html>
-
