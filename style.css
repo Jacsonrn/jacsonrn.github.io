@@ -2,6 +2,7 @@
 :root {
     --primary: #FF0050; /* TikTok Red */
     --secondary: #00F2EA; /* TikTok Cyan */
+    --tertiary: #00FF66; /* Tech Green for Blog */
     --dark: #121212;
     --card-bg: #1e1e1e;
     --text: #ffffff;
@@ -40,6 +41,7 @@ a { text-decoration: none; color: inherit; }
 .split:hover { flex: 1.5; }
 .split-software { background: linear-gradient(45deg, #1a1a1a, #2a2a2a); }
 .split-banco { background: linear-gradient(45deg, #0f0f0f, #1a1a1a); }
+.split-blog { background: linear-gradient(45deg, #0a1912, #11281e); }
 
 .split h2 { font-size: 3rem; z-index: 2; margin-bottom: 10px; }
 .split p { font-size: 1.2rem; color: #ccc; z-index: 2; max-width: 400px; text-align: center; }
@@ -55,6 +57,7 @@ a { text-decoration: none; color: inherit; }
     z-index: 2;
 }
 .split-banco .btn-enter { border-color: var(--secondary); }
+.split-blog .btn-enter { border-color: var(--tertiary); }
 .btn-enter:hover { background: white; color: black; }
 
 /* Galeria Grid */
