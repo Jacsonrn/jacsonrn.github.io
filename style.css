@@ -96,6 +96,9 @@ a { text-decoration: none; color: inherit; }
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .portal-container { flex-direction: column; }
-    .split { border-right: none; border-bottom: 1px solid #333; }
+    .portal-container { flex-direction: column; height: auto; min-height: 100vh; }
+    .split { border-right: none; border-bottom: 1px solid #333; min-height: 33.33vh; padding: 40px 15px; }
+    .split h2 { font-size: 2.2rem; }
+    .split p { font-size: 1rem; margin-bottom: 10px; }
+    .btn-enter { margin-top: 15px; padding: 12px 25px; }
 }
